@@ -7,7 +7,7 @@ int main(){
 
     printf ("Press '1' For Rectangle\n");
     printf ("Press '2' For Circle\n");
-    printf ("Your Press :");
+    printf ("Your Press : ");
     int choice;
     scanf("%d",&choice);
     
