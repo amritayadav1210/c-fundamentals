@@ -8,7 +8,7 @@ int main()
 
     for(int num=2;num<=10;num++){
 
-        int isPrime = 1; 
+        int isPrime = 1; //flag
         for(int i=2;i<num;i++){
             int rem = num%i;
             if(rem == 0){
