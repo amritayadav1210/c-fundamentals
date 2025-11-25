@@ -4,23 +4,31 @@ each number is the sum of the two preceding ones.
 */
 
 #include<stdio.h>
-
+int fabinoci(int n);
 int main(){
     
     //int result = fabinoci(7);
     //printf("fabinoci %d",result);
 
-    for(int i=1;i<=10;i++){
+    for(int i=0;i<=10;i++)
+    {
         int result = fabinoci(i);
         printf(" %d",result);        
     }
 
 }
 
-int fabinoci(int n){
+int fabinoci(int n)
+{
     //base case
+    /*
     if(n ==1 || n == 2){
         return 1;
+    }
+    */
+
+    if(n ==0 || n == 1){
+        return n;
     }
     return fabinoci(n-1)+fabinoci(n-2);
 }

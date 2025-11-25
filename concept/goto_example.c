@@ -1,17 +1,20 @@
 #include <stdio.h>
 
-int main() {
+int main()
+{
     int i = 0;
-    
-    vishal:
+
+vishal:
     printf("\nVishal goto start");
 
-    loop_start_annu: // The label
-    if (i < 5) {
+loop_start_annu: // The label
+    if (i < 5)
+    {
         printf("\n%d ", i);
         i++;
 
-        if(i==3){
+        if (i == 3)
+        {
             goto vishal;
         }
         goto loop_start_annu; // Jump back to the label

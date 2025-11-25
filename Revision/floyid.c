@@ -2,7 +2,7 @@
 int main()
 {
     int dimension, i, j;
-    printf("Enter the dimension ");
+    printf("Enter the dimension\a ");
     scanf("%d", &dimension);
     int count = 1;
     for (i = 0; i < dimension; i++)
@@ -11,10 +11,11 @@ int main()
         {
             if (i >= j)
             {
-                printf("%d", count);
+                printf("%d\t", count);
                 count++;
             }
-            printf("\n");
+            
         }
+        printf("\n");
     }
 }
