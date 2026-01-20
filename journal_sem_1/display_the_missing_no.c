@@ -7,12 +7,13 @@ int main()
 
     printf("Enter any number:");
     scanf("%d",&num);
-    printf("-----size of Rem :%d",sizeof(rem));
+    //printf("-----size of Rem :%d",sizeof(rem));
 
      for(i=0;i<=num;i++)
       {
         rem=num%10;
         printf("\nThe rem is:%d",rem);
+        //working like a flag remender assigned as 1
         digitArray[rem]=1;
 
             num=num/10;

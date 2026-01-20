@@ -21,7 +21,7 @@ int main()
         break;
 
     case 2:
-        c = -b;
+        c = a-b;
         printf("the result is :%d", c);
         break;
 

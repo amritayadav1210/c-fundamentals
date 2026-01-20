@@ -11,13 +11,13 @@ int main()
     {
         printf("\nEnter %d Number:", (i + 1));
         scanf("%d", &currentNumber);
-        printf("\nCurrent Number :%d", currentNumber);
-        printf("\nBefore mimValue :%d", mimValue);
+       // printf("\nCurrent Number :%d", currentNumber);
+        //printf("\nBefore mimValue :%d", mimValue);
         if (currentNumber < mimValue)
         {
             mimValue = currentNumber;
         }
-        printf("\nAfter mimValue :%d\n\n", mimValue);
+        //printf("\nAfter mimValue :%d\n\n", mimValue);
     }
 
     printf("The mimValue =%d", mimValue);
