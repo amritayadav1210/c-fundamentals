@@ -14,7 +14,7 @@ void insertAtFront(Node **head, int value)
 {
     Node *newNode = (Node *)malloc(sizeof(Node));
     if (newNode == NULL)
-        return;
+        return; 
 
     newNode->data = value;
     newNode->next = *head; // This is fine even if *head is NULL
