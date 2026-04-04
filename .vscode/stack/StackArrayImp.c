@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+
 #define MAX 100
 
 struct Stack {
@@ -70,14 +72,25 @@ void display(struct Stack* s){
 }
 
 int main() {
-
+    system("cls"); 
+    
     struct Stack myStack;
+    
     initStack(&myStack);
 
     // 1. Test Pushing
+
+    display(&myStack);
     push(&myStack, 10);
+    display(&myStack);
     push(&myStack, 20);
+     display(&myStack);
     push(&myStack, 30);
+     display(&myStack);
+    push(&myStack, 40);
+     display(&myStack);
+    push(&myStack, 15);
+    
     display(&myStack);
 
 

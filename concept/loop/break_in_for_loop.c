@@ -15,7 +15,7 @@ int main()
         }
         printf("\ni=%d", i);
 
-        if (i==47)
+        if (i==47) 
         {
             break;
         }
