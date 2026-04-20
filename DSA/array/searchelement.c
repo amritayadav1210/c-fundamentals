@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 int searchArray(int arr[], int lastindex, int data);
 int main()

@@ -8,6 +8,9 @@ typedef struct Node
     struct Node *next; // Pointer to the next node in the list
 } Node;
 
+/*f you only want to look at the list: Use Node *head.
+If you want to change which block is the first one: Use Node **head*/
+
 // Create a new node and add it to the front
 void insertAtFront(Node **head, int value)
 {

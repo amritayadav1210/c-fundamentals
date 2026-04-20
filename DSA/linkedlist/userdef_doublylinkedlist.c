@@ -25,7 +25,7 @@ void create()
         }
         else
         {
-            printf("Enter data for new node");
+             printf("Enter Data for node %d:\n", i);
             scanf("%d", &newnode->data);
 
             // means there is no first node
