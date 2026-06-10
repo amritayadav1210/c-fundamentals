@@ -14,7 +14,7 @@ int main()
     printf("\nThe elements in the array are:");
     for (i = 0; i < size; i++)
     {
-        printf("\n%d", a[i]);
+        printf("%d", a[i]);
     }
     printf("\ni=%d",i);
     return 0;

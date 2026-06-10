@@ -154,6 +154,7 @@ void search()
     }
 }
 
+
 void display()
 {
     struct node *ptr = head;

@@ -1,0 +1,31 @@
+File Handling 
+ 
+ Concept of file 
+ Types of File:
+
+In C programming, files are primarily categorized by how they store data and their readability. There are two main types of data files: Text files and Binary files.1. Text Files (ASCII Files)Text files store data as a sequence of human-readable characters, typically using ASCII or Unicode encoding.Storage Format: Each character (letters, digits, symbols) is stored as its corresponding ASCII value in one byte.Readability: They can be opened and edited using standard text editors like Notepad or TextEdit.Newline Handling: Lines are usually terminated with a special newline character (\n). In Windows, C automatically converts \n to a carriage return-linefeed combination (\r\n) when writing.Examples: Source code files (.c, .h), configuration files, and standard text documents (.txt).2. Binary FilesBinary files store data in the same format as it appears in the computer's memory (raw bytes of 0s and 1s).Storage Format: Data is not translated into characters. For example, an integer is stored as its raw 4-byte representation rather than as individual digit characters.Readability: They are not human-readable; opening them in a text editor will show scrambled symbols or garbage characters.Efficiency: They are more compact and faster to process because they require no character translation.Security: They offer slightly better security since the content cannot be easily understood without knowing the file structure.Examples: Compiled executable files (.exe), object files (.o), images (.jpg), and audio files (.mp3).Summary ComparisonFeatureText FileBinary FileData FormatCharacters (ASCII/Unicode)Raw Bytes (0s and 1s)ReadabilityHuman-readableMachine-readable onlyStorage SizeLarger (takes more space)Smaller (compact)SpeedSlower (requires translation)Faster (direct access)Extension.txt, .c, .h.bin, .dat, .exeIn addition to these data files, C development involves other file types like Source files (.c), Header files (.h), Object files (.o or .obj), and Executable files (.exe) created during the compilation process.
+
+
+ Operations on file 
+In C, file operations are handled using a set of standard library functions. Think of it like a workflow: you must open a door (file) before you can enter, do your work, and then make sure to lock it when you leave.Here are the four primary operations:1. Opening a File (fopen)Before doing anything, you must create a connection between your program and the file using a FILE pointer.Syntax: fp = fopen("filename", "mode");Example: FILE *fp = fopen("data.txt", "w");2. Reading from a FileThere are different ways to pull data out, depending on what you need:fgetc(): Reads a single character.fgets(): Reads a full string or line.fscanf(): Reads formatted data (like scanf but from a file).fread(): Used for reading blocks of data (mostly for binary files).3. Writing to a FileSimilarly, you have different ways to send data to a file:fputc(): Writes a single character.fputs(): Writes a string.fprintf(): Writes formatted data (like printf but into a file).fwrite(): Used for writing blocks of data (mostly for binary files).4. Closing a File (fclose)This is the most important step. It flushes the buffers and ensures all your data is actually saved to the disk.Syntax: fclose(fp);Other Useful Helper OperationsBeyond basic reading and writing, C provides tools to manage the "position" inside a file:fseek(): Moves the file pointer to a specific location (jumping to the middle or end).ftell(): Tells you the current position of the pointer (how many bytes from the start).rewind(): Quickly moves the pointer back to the very beginning of the file.remove(): Deletes a file from the system.Quick Example: Reading a whole file character by charactercFILE *fp = fopen("test.txt", "r");
+char ch;
+
+if (fp == NULL) return 1; // Error check
+
+while ((ch = fgetc(fp)) != EOF) { // Read until End Of File
+    printf("%c", ch);
+}
+
+fclose(fp);
+Use code with caution.Which operation would you like to see a complete code example for—formatted writing with fprintf or random access using fseek?Ask about                           AI Mode response 
+
+ File modes 
+ file management 
+functions-fopen(), 
+fclose(),fprintf (), 
+fscanf(), getc(), putc (), 
+getw(), putw () 
+ Random access 
+functions-fseek(), ftell() 
+and rewind()
+

@@ -86,18 +86,20 @@ void deleteNode() {
 
     if (pos == 1) { // Delete head
         head = head->next;
-        if (head != NULL)
+        if (head != NULL)//head is not null
          head->prev = NULL;
         else
          end = NULL; // List becomes empty
         free(ptr);
-    } else {
-        for (i = 1; i < pos && ptr != NULL; i++) ptr = ptr->next;
+    } else
+     {
+        for (i = 1; i < pos && ptr != NULL; i++)
+         ptr = ptr->next;
         if (ptr == NULL) {
             printf("Position not found!\n");
             return;
         }
-        
+         
         ptr->prev->next = ptr->next;
         if (ptr->next != NULL)//last element not
          {

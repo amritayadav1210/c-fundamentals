@@ -20,7 +20,7 @@ int main() {
     int choice;
     while (1) {
         printf("\n--- STACK MENU ---");
-        printf("\n1. Push\n2. Pop \n3. Peek\n4. Display\n5. Exit)");
+        printf("\n1. create\n2. Pop \n3. Peek\n4. Display\n5. Exit)");
        
         printf("\n------------------");
         printf("\nEnter choice: ");

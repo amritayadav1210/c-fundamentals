@@ -53,10 +53,19 @@ int main()
 // --- Basic Operations ---
 void create()
 {
-    printf("\nElements: ");
+    printf("\nno of Elements: ");
     scanf("%d", &n);
+    if(n>MAX)
+    printf("Element out of bound");
+    return;
+    if(n<0)
+    printf("Element below of bound");
+    return;
+
     for (int i = 0; i < n; i++)
-        scanf("%d", &arr[i]);
+        {
+            scanf("%d", &arr[i]);
+        }
 }
 
 void traverse()
@@ -72,7 +81,7 @@ void insert()
     printf("\nPos & Element: ");
     scanf("%d %d", &pos, &elem);
     for (int i = n - 1; i >= pos - 1; i--)
-        arr[i + 1] = arr[i];
+        arr[i + 1] = arr[i]; //Logic: It takes the value at the current position i and moves it one step to the right (i + 1).create a hole at the needed pos 
     arr[pos - 1] = elem;
     n++;
 }
@@ -128,10 +137,12 @@ void sortMenu() {
 
     switch (sChoice) {
         case 1: // Bubble Sort
-            for (i = 0; i < n - 1; i++) {
-                for (j = 0; j < n - i - 1; j++) {
+            for (i = n; i >0; i--) {
+                for (j = 0; j < i-1; j++) {
                     if (arr[j] > arr[j + 1]) {
-                        temp = arr[j]; arr[j] = arr[j + 1]; arr[j + 1] = temp;
+                        temp = arr[j]; 
+                        arr[j] = arr[j + 1];
+                         arr[j + 1] = temp;
                     }
                 }
             }
@@ -140,18 +151,33 @@ void sortMenu() {
 
         case 2: // Insertion Sort
             for (i = 1; i < n; i++) {
-                temp = arr[i];
-                j = i - 1;
-                while (j >= 0 && arr[j] > temp) {
-                    arr[j + 1] = arr[j];
-                    j--;
-                }
-                arr[j + 1] = temp;
-            }
+                 for (j = i; j>=1; j--){
+                    if(arr[j-1]>arr[j]){
+                        temp=arr[j-1];
+                        arr[j-1]=arr[j];
+                        arr[j]=temp;
+
+                    }
+                 }
+            }  
             printf("Sorted using Insertion Sort.");
             break;
 
         case 3: // Selection Sort
+            for (i = 0; i < n - 1; i++) {
+                int min_idx = i;
+                for (j = i + 1; j < n; j++) {
+                    if (arr[j] < arr[min_idx])
+                     min_idx = j;
+                }
+                temp = arr[min_idx];
+                arr[min_idx] = arr[i];
+                arr[i] = temp;
+            }
+            printf("Sorted using Selection Sort.");
+            break;
+
+           /* case 4: // quick Sort
             for (i = 0; i < n - 1; i++) {
                 int min_idx = i;
                 for (j = i + 1; j < n; j++) {
@@ -162,7 +188,7 @@ void sortMenu() {
                 arr[i] = temp;
             }
             printf("Sorted using Selection Sort.");
-            break;
+            break;*/
 
         default:
             printf("Invalid sorting choice.");
